@@ -16,11 +16,12 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,san
 header{max-width:900px;margin:0 auto;padding:18px 16px 4px}
 h1{font-size:clamp(30px,7vw,48px);margin:0;font-weight:900}
 .sub{color:var(--mute);margin:2px 0 12px}
-.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-button{font:inherit;cursor:pointer;border:2px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:6px 16px;font-weight:700}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+button{font:inherit;cursor:pointer;border:2px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:5px 14px;font-weight:700}
 button.on{background:var(--acc);border-color:var(--acc);color:#fff}
 .sp{flex:1}
-#street{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:44px 20px 0;margin-top:10px;background:linear-gradient(var(--sky1),var(--sky2) 70%);align-items:flex-end;-webkit-overflow-scrolling:touch}
+#q{width:100%;padding:8px 14px;border:2px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink);font:inherit;margin-top:10px}
+#street{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:44px 20px 0;margin-top:10px;background:linear-gradient(var(--sky1),var(--sky2) 70%);align-items:flex-end}
 .block{flex:0 0 min(310px,84vw);scroll-snap-align:center}
 .fac{background:hsl(var(--h) 42% var(--l));border-radius:16px 16px 0 0;padding:12px;border:2px solid var(--ink);border-bottom:0;position:relative}
 .fac:before{content:"";position:absolute;inset:-14px 10px auto;height:14px;background:hsl(var(--h) 40% calc(var(--l) - 10%));border:2px solid var(--ink);border-bottom:0;border-radius:8px 8px 0 0}
@@ -29,167 +30,158 @@ button.on{background:var(--acc);border-color:var(--acc);color:#fff}
 .sign span{font-size:12px;color:var(--mute);direction:ltr;display:block}
 .win{height:38px;margin:0 0 10px;border-radius:6px;background:repeating-linear-gradient(90deg,var(--glow) 0 26px,transparent 26px 40px);opacity:.75}
 .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.door{display:flex;flex-direction:column;align-items:center;gap:0;border-radius:36px 36px 4px 4px;padding:8px 2px 6px;font-size:12px;line-height:1.3;position:relative;border:2px solid var(--ink);background:var(--panel)}
+.door{display:flex;flex-direction:column;align-items:center;border-radius:36px 36px 4px 4px;padding:8px 2px 6px;font-size:12px;line-height:1.3;position:relative;border:2px solid var(--ink);background:var(--panel);border-radius:36px 36px 4px 4px}
 .door i{font-style:normal;font-size:24px}
 .door em{position:absolute;top:-8px;inset-inline-start:-6px;background:var(--acc);color:#fff;border-radius:99px;font-style:normal;font-size:11px;padding:0 6px}
 .door:hover:not(:disabled){transform:translateY(-4px);background:var(--glow)}
 .door:disabled{opacity:.4;cursor:default}
-.road{height:26px;background:var(--road);border-top:3px solid var(--ink);background-image:repeating-linear-gradient(90deg,var(--bg) 0 28px,transparent 28px 60px);background-size:100% 3px;background-repeat:no-repeat;background-position:center}
+.road{height:26px;background:var(--road);border-top:3px solid var(--ink)}
 .note{max-width:900px;margin:14px auto 40px;padding:0 16px;color:var(--mute);font-size:13px}
+#lib{max-width:900px;margin:14px auto 40px;padding:0 16px}
+#lib[hidden]{display:none}
 #ov{position:fixed;inset:0;background:#0008;display:none;align-items:flex-end;justify-content:center;z-index:5}
 #ov.show{display:flex}
-#sheet{background:var(--bg);width:min(640px,100%);max-height:78vh;overflow:auto;border-radius:22px 22px 0 0;border:2px solid var(--ink);padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+#sheet{background:var(--bg);width:min(640px,100%);max-height:80vh;overflow:auto;border-radius:22px 22px 0 0;border:2px solid var(--ink);padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
 #sheet h2{margin:0 0 10px;font-size:20px;display:flex;align-items:center}
 .it{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
+.it>div:nth-child(2){flex:1;min-width:0}
 .it h3{margin:0;font-size:16px}.it p{margin:2px 0 0;font-size:14px}.meta{color:var(--mute);font-size:12px}
-.it button{margin-inline-start:auto;font-size:12px;padding:4px 10px;flex-shrink:0}
-.lk{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
-.lk a{background:var(--acc);color:#fff;text-decoration:none;border-radius:999px;padding:3px 12px;font-size:13px;font-weight:700}
+.lk{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.lk a{font-size:13px;font-weight:700;text-decoration:none;color:#fff;background:var(--acc);border-radius:999px;padding:3px 12px}
 .lk a.s{background:var(--panel);color:var(--ink);border:1px solid var(--line)}
-.lk button.pl{margin:0;background:var(--acc);color:#fff;border-color:var(--acc);font-size:14px;padding:4px 16px}
-#sheet video,#sheet audio{width:100%;border-radius:12px;margin-top:10px}#sheet video{background:#000}
-.up{border:2px dashed var(--line);border-radius:12px;padding:12px;margin:12px 0}
-#tabs button{padding:3px 12px;font-size:14px}
-#lib{max-width:900px;margin:16px auto;padding:0 16px 40px}
-#lib[hidden]{display:none}
-.up input,#q{display:block;width:100%;margin:4px 0;padding:7px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit}
+.bg{font-size:12px;padding:3px 10px;flex-shrink:0}
 </style>
 </head>
 <body>
 <header>
 <h1>🏘️ حارة الأيام</h1>
-<p class="sub">مش موقع بتدوّر فيه، دي حارة بتمشي فيها. كل عمارة عقد من الزمن، وكل باب فيها بيفتح على حاجة: سينما، أسطوانات، قهوة الراديو، ورّاق، أو شاشة.</p>
-<div class="bar" id="tabs"><button class="on" data-v="street">🏘️ الحارة</button><button data-v="film">🎬 أفلام</button><button data-v="video">📽️ فيديو</button><button data-v="song">📀 أغاني</button><button data-v="radio">☕ راديو</button><button data-v="book">📚 كتب</button><button data-v="blogs">✍️ مدونات</button></div>
-<input id="q" placeholder="🔍 ابحث في المكتبة..." style="margin:10px 0">
-<div class="bar">
-<button id="nx">← امشي في الحارة</button><button id="pv">→ ارجع</button>
-<span class="sp"></span><button id="bagb">🧳 شنطتك (<span id="bc">0</span>)</button>
-</div>
+<p class="sub">مش موقع بتدوّر فيه، دي حارة بتمشي فيها. كل عمارة عقد من الزمن، وكل باب بيفتح على سينما أو أسطوانات أو راديو أو كتب أو شاشة.</p>
+<div class="bar" id="tabs"><button class="on" data-v="street">🏘️ الحارة</button><button data-v="film">🎬 أفلام</button><button data-v="video">📽️ فيديو</button><button data-v="song">📀 أغاني</button><button data-v="radio">☕ راديو</button><button data-v="book">📚 كتب</button><button data-v="artists">🎤 فنانين</button></div>
+<input id="q" placeholder="🔍 ابحث عن أي عمل...">
+<div class="bar" id="nav"><button id="nx">← امشي في الحارة</button><button id="pv">→ ارجع</button><span class="sp"></span><button id="bagb">🧳 شنطتك (<span id="bc">0</span>)</button></div>
 </header>
 <div id="street"></div>
 <div class="road" id="road"></div>
 <main id="lib" hidden></main>
-<p class="note">▶ «شغّل هنا» بيشغّل العمل جوه الموقع نفسه، من غير ما يوديك لأي موقع تاني. الأبواب المقفولة معناها إننا لسه ملقيناش فيها عمل مناسب. أزرار «افتح» و«اقرأ» بتفتح مصدر العمل الفعلي في تبويب جديد (Project Gutenberg للكتب، وأرشيف الإنترنت للأفلام والصوتيات)، و«يوتيوب» بديل. نتايج البحث بتتغير حسب المتاح على المواقع دي.</p>
+<p class="note" id="note">كل عمل ليه أزرار: «🌐 الصفحة الرئيسية» بتفتح صفحته على ويكيبيديا، و«▶ شغّله / اسمعه / اقرأه» بتفتح مصدر التشغيل (أرشيف الإنترنت أو Project Gutenberg)، ويوتيوب بديل. كلها بتفتح في تبويب جديد. الفهرس منتقى لأعمال معروفة، ونتايج المصادر بتتغير حسب المتاح. أغاني أم كلثوم وعبد الحليم ومايكل جاكسون محمية بحقوق النشر، فبتتشغّل من يوتيوب نفسه مش من الموقع، وسنواتها تقريبية.</p>
 <div id="ov"><div id="sheet"></div></div>
 <script>
 const T={film:["🎬","سينما"],song:["📀","أسطوانات"],radio:["☕","قهوة الراديو"],book:["📚","الورّاق"],video:["📽️","الشاشة"]};
 const D=[
-[1895,"book","آلة الزمن – هـ. ج. ويلز","الرواية اللي بدأت فكرة السفر عبر الزمن."],
-[1895,"video","وصول القطار إلى المحطة – لوميير","من أوائل العروض السينمائية في التاريخ."],
-[1896,"video","أول عرض سينمائي في مصر","عروض لوميير وصلت الإسكندرية والقاهرة في 1896."],
-[1897,"book","دراكيولا – برام ستوكر","الرواية القوطية اللي صنعت أسطورة مصاصي الدماء."],
-[1899,"song","Maple Leaf Rag – سكوت جوبلين","أشهر مقطوعات الراجتايم."],
-[1902,"film","رحلة إلى القمر – ميلييس","أيقونة السينما الصامتة والمؤثرات الأولى."],
-[1903,"film","السطو الكبير على القطار","من أوائل الأفلام الروائية الأمريكية."],
-[1908,"book","الريح في الصفصاف – كينيث غراهام","حكاية كلاسيكية عن الصداقة والنهر."],
-[1911,"book","بيتر وويندي – ج. م. باري","الرواية الأصلية لبيتر بان."],
-[1914,"song","St. Louis Blues – و. س. هاندي","أب البلوز يكتب واحدة من أشهر أغانيه."],
-[1915,"book","المسخ – فرانز كافكا","قصة غريغور سامسا الشهيرة."],
-[1920,"radio","أول بث تجاري – محطة KDKA","بداية عصر الإذاعة التجارية في نوفمبر 1920."],
-[1920,"film","عيادة الدكتور كاليغاري","قمة التعبيرية الألمانية الصامتة."],
-[1922,"film","نوسفيراتو","فيلم رعب صامت أثّر في كل ما بعده."],
-[1922,"book","يوليسيس – جيمس جويس","أحد أعمدة الأدب الحداثي."],
-[1923,"song","أعمال سيد درويش","فنان الشعب وأبو الموسيقى المصرية الحديثة (ت. 1923)."],
-[1924,"song","Rhapsody in Blue – جيرشوين","مزيج الجاز بالموسيقى الكلاسيكية."],
-[1925,"film","المدرعة بوتمكين","درس أبدي في المونتاج."],
-[1925,"book","غاتسبي العظيم – ف. سكوت فيتزجيرالد","رواية العصر الذهبي الأمريكي."],
-[1926,"film","الجنرال – باستر كيتون","كوميديا صامتة بمطاردة قطارات حقيقية."],
-[1927,"film","متروبوليس – فريتز لانغ","مدينة المستقبل وأب أفلام الخيال العلمي."],
-[1928,"film","Steamboat Willie","ظهور ميكي ماوس الأول، وصار ملكاً عاماً في 2024."],
-[1932,"radio","البث الإمبراطوري – BBC","أول خدمة إذاعية موجهة لأنحاء الإمبراطورية."],
-[1934,"radio","انطلاق الإذاعة المصرية","بداية الإرسال الإذاعي الرسمي في مصر."],
-[1938,"radio","حرب العوالم – أورسون ويلز","بث درامي أرعب مستمعين صدّقوه خبراً."],
-[1940,"radio","خطاب تشرشل «سنقاتل على الشواطئ»","من أشهر الخطب الإذاعية في التاريخ."],
-[1945,"book","مزرعة الحيوان – جورج أورويل","الأمثولة السياسية الشهيرة."],
-[1949,"book","1984 – جورج أورويل","رواية الرقابة والمراقبة."],
-[1952,"video","Duck and Cover","فيلم توعية أمريكي من الحرب الباردة، وهو متاح للعامة."],
-[1953,"radio","انطلاق صوت العرب","الإذاعة اللي ملأت الأجواء العربية."],
-[1959,"film","Plan 9 from Outer Space","فيلم متداول في الملك العام، ومشهور كأسوأ فيلم."],
-[1968,"film","ليلة الموتى الأحياء","فيلم مستقل غيّر أفلام الرعب."],
-[1969,"video","هبوط أبولو 11 – أرشيف ناسا","مواد ناسا عامة ومتاحة للجميع."]
+[1895,"book","آلة الزمن – هـ. ج. ويلز","الرواية اللي بدأت فكرة السفر عبر الزمن.","The_Time_Machine","The Time Machine Wells"],
+[1895,"video","وصول القطار إلى المحطة – لوميير","من أوائل العروض السينمائية في التاريخ.","L'Arrivée_d'un_train_en_gare_de_La_Ciotat","Arrival of a Train at La Ciotat"],
+[1896,"video","أول عرض سينمائي في مصر","عروض لوميير وصلت الإسكندرية والقاهرة في 1896.","Cinema_of_Egypt","Lumiere brothers 1896 films"],
+[1897,"book","دراكيولا – برام ستوكر","الرواية القوطية اللي صنعت أسطورة مصاصي الدماء.","Dracula","Dracula Bram Stoker"],
+[1899,"song","Maple Leaf Rag – سكوت جوبلين","أشهر مقطوعات الراجتايم.","Maple_Leaf_Rag","Maple Leaf Rag Scott Joplin"],
+[1902,"film","رحلة إلى القمر – ميلييس","أيقونة السينما الصامتة والمؤثرات الأولى.","A_Trip_to_the_Moon","A Trip to the Moon Melies"],
+[1903,"film","السطو الكبير على القطار","من أوائل الأفلام الروائية الأمريكية.","The_Great_Train_Robbery_(1903_film)","The Great Train Robbery 1903"],
+[1908,"book","الريح في الصفصاف – كينيث غراهام","حكاية كلاسيكية عن الصداقة والنهر.","The_Wind_in_the_Willows","The Wind in the Willows"],
+[1911,"book","بيتر وويندي – ج. م. باري","الرواية الأصلية لبيتر بان.","Peter_and_Wendy","Peter and Wendy Barrie"],
+[1914,"song","St. Louis Blues – و. س. هاندي","أب البلوز يكتب واحدة من أشهر أغانيه.","St._Louis_Blues_(song)","St. Louis Blues Handy"],
+[1915,"book","المسخ – فرانز كافكا","قصة غريغور سامسا الشهيرة.","The_Metamorphosis","Metamorphosis Kafka"],
+[1920,"radio","أول بث تجاري – محطة KDKA","بداية عصر الإذاعة التجارية في نوفمبر 1920.","KDKA_(AM)","KDKA 1920 broadcast"],
+[1920,"film","عيادة الدكتور كاليغاري","قمة التعبيرية الألمانية الصامتة.","The_Cabinet_of_Dr._Caligari","Cabinet of Dr. Caligari"],
+[1922,"film","نوسفيراتو","فيلم رعب صامت أثّر في كل ما بعده.","Nosferatu","Nosferatu 1922"],
+[1922,"book","يوليسيس – جيمس جويس","أحد أعمدة الأدب الحداثي.","Ulysses_(novel)","Ulysses James Joyce"],
+[1923,"song","أعمال سيد درويش","فنان الشعب وأبو الموسيقى المصرية الحديثة (ت. 1923).","Sayed_Darwish","سيد درويش"],
+[1924,"song","Rhapsody in Blue – جيرشوين","مزيج الجاز بالموسيقى الكلاسيكية.","Rhapsody_in_Blue","Rhapsody in Blue Gershwin"],
+[1925,"film","المدرعة بوتمكين","درس أبدي في المونتاج.","Battleship_Potemkin","Battleship Potemkin"],
+[1925,"book","غاتسبي العظيم – ف. سكوت فيتزجيرالد","رواية العصر الذهبي الأمريكي.","The_Great_Gatsby","The Great Gatsby"],
+[1926,"film","الجنرال – باستر كيتون","كوميديا صامتة بمطاردة قطارات حقيقية.","The_General_(1926_film)","The General Buster Keaton"],
+[1927,"film","متروبوليس – فريتز لانغ","مدينة المستقبل وأب أفلام الخيال العلمي.","Metropolis_(1927_film)","Metropolis 1927"],
+[1928,"film","Steamboat Willie","ظهور ميكي ماوس الأول، وصار ملكاً عاماً في 2024.","Steamboat_Willie","Steamboat Willie"],
+[1932,"radio","البث الإمبراطوري – BBC","أول خدمة إذاعية موجهة لأنحاء الإمبراطورية.","BBC_World_Service","BBC Empire Service 1932"],
+[1934,"radio","انطلاق الإذاعة المصرية","بداية الإرسال الإذاعي الرسمي في مصر.","Egyptian_Radio_and_Television_Union","الإذاعة المصرية"],
+[1938,"radio","حرب العوالم – أورسون ويلز","بث درامي أرعب مستمعين صدّقوه خبراً.","The_War_of_the_Worlds_(radio_drama)","War of the Worlds Orson Welles 1938"],
+[1940,"radio","خطاب تشرشل «سنقاتل على الشواطئ»","من أشهر الخطب الإذاعية في التاريخ.","We_shall_fight_on_the_beaches","Churchill we shall fight on the beaches"],
+[1945,"book","مزرعة الحيوان – جورج أورويل","الأمثولة السياسية الشهيرة.","Animal_Farm","Animal Farm Orwell"],
+[1949,"book","1984 – جورج أورويل","رواية الرقابة والمراقبة.","Nineteen_Eighty-Four","Nineteen Eighty-Four Orwell"],
+[1952,"video","Duck and Cover","فيلم توعية أمريكي من الحرب الباردة، وهو متاح للعامة.","Duck_and_Cover_(film)","Duck and Cover 1952"],
+[1953,"radio","انطلاق صوت العرب","الإذاعة اللي ملأت الأجواء العربية.","Voice_of_the_Arabs","صوت العرب"],
+[1959,"film","Plan 9 from Outer Space","فيلم متداول في الملك العام، ومشهور كأسوأ فيلم.","Plan_9_from_Outer_Space","Plan 9 from Outer Space"],
+[1968,"film","ليلة الموتى الأحياء","فيلم مستقل غيّر أفلام الرعب.","Night_of_the_Living_Dead","Night of the Living Dead 1968"],
+[1969,"video","هبوط أبولو 11 – أرشيف ناسا","مواد ناسا عامة ومتاحة للجميع.","Apollo_11","Apollo 11 NASA footage"],
+[1950,"song","رباعيات الخيام – أم كلثوم","من روائع كوكب الشرق.","Umm_Kulthum","رباعيات الخيام أم كلثوم","om"],
+[1964,"song","أنت عمري – أم كلثوم","أول تعاون بينها وبين محمد عبد الوهاب.","Umm_Kulthum","انت عمري ام كلثوم","om"],
+[1964,"song","سيرة الحب – أم كلثوم","من أغانيها الشهيرة في الستينات.","Umm_Kulthum","سيرة الحب ام كلثوم","om"],
+[1966,"song","الأطلال – أم كلثوم","قصيدة إبراهيم ناجي، ولحنها رياض السنباطي.","Umm_Kulthum","الاطلال ام كلثوم","om"],
+[1969,"song","ألف ليلة وليلة – أم كلثوم","من ألحان بليغ حمدي.","Umm_Kulthum","الف ليلة وليلة ام كلثوم","om"],
+[1971,"song","أغدا ألقاك – أم كلثوم","قصيدة الهادي آدم، ولحن محمد عبد الوهاب.","Umm_Kulthum","اغدا القاك ام كلثوم","om"],
+[1957,"song","زي الهوى – عبد الحليم حافظ","من أغانيه المبكرة الشهيرة.","Abdel_Halim_Hafez","زي الهوى عبد الحليم حافظ","ah"],
+[1957,"song","عدّى النهار – عبد الحليم حافظ","من أشهر أغاني العندليب.","Abdel_Halim_Hafez","عدى النهار عبد الحليم حافظ","ah"],
+[1967,"song","أهواك – عبد الحليم حافظ","من أشهر أغانيه الرومانسية.","Abdel_Halim_Hafez","اهواك عبد الحليم حافظ","ah"],
+[1976,"song","قارئة الفنجان – عبد الحليم حافظ","كلمات نزار قباني، وألحان محمد الموجي.","Abdel_Halim_Hafez","قارئة الفنجان عبد الحليم حافظ","ah"],
+[1979,"song","Don't Stop 'Til You Get Enough – مايكل جاكسون","أول نجاح كبير في مرحلة ألبوم Off the Wall.","Don't_Stop_'Til_You_Get_Enough","Michael Jackson Don't Stop Til You Get Enough","mj"],
+[1983,"song","Billie Jean – مايكل جاكسون","من ألبوم Thriller.","Billie_Jean","Michael Jackson Billie Jean","mj"],
+[1983,"song","Beat It – مايكل جاكسون","من ألبوم Thriller.","Beat_It","Michael Jackson Beat It","mj"],
+[1983,"song","Thriller – مايكل جاكسون","أشهر فيديو كليب في تاريخ البوب.","Thriller_(Michael_Jackson_song)","Michael Jackson Thriller","mj"],
+[1987,"song","Bad – مايكل جاكسون","أغنية ألبوم Bad.","Bad_(Michael_Jackson_song)","Michael Jackson Bad","mj"],
+[1987,"song","Man in the Mirror – مايكل جاكسون","من ألبوم Bad.","Man_in_the_Mirror","Michael Jackson Man in the Mirror","mj"],
+[1988,"song","Smooth Criminal – مايكل جاكسون","من ألبوم Bad.","Smooth_Criminal","Michael Jackson Smooth Criminal","mj"],
+[1991,"song","Black or White – مايكل جاكسون","من ألبوم Dangerous.","Black_or_White","Michael Jackson Black or White","mj"],
+[1995,"song","Earth Song – مايكل جاكسون","من ألبوم HIStory.","Earth_Song","Michael Jackson Earth Song","mj"]
 ];
-const Q=['The Time Machine Wells','Arrival of a Train at La Ciotat Lumiere','وصول لوميير الإسكندرية 1896 أول عرض سينما في مصر','Dracula Bram Stoker','Maple Leaf Rag Scott Joplin','A Trip to the Moon Melies 1902','The Great Train Robbery 1903','The Wind in the Willows','Peter and Wendy Barrie','St. Louis Blues W. C. Handy','The Metamorphosis Kafka','KDKA 1920 first radio broadcast','Cabinet of Dr. Caligari 1920','Nosferatu 1922','Ulysses James Joyce','سيد درويش','Rhapsody in Blue Gershwin','Battleship Potemkin','The Great Gatsby Fitzgerald','The General Buster Keaton','Metropolis 1927 Fritz Lang','Steamboat Willie 1928','BBC Empire Service 1932','الإذاعة المصرية 1934 تسجيلات قديمة','War of the Worlds Orson Welles 1938','Churchill We shall fight on the beaches','Animal Farm Orwell','Nineteen Eighty-Four Orwell','Duck and Cover 1952','صوت العرب إذاعة','Plan 9 from Outer Space','Night of the Living Dead 1968','Apollo 11 NASA footage'];
-function links(d){const q=encodeURIComponent(Q[D.indexOf(d)]||d[2]);const m=d[1]==='book'?['📖 اقرأ','https://www.gutenberg.org/ebooks/search/?query='+q]:['▶ افتح وشغّل','https://archive.org/search?query='+q];return `<a href="${m[1]}" target="_blank" rel="noopener">${m[0]}</a><a class="s" href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">يوتيوب</a>`}
-const N={1890:"التسعينات",1900:"الأولى",1910:"العشرة",1920:"العشرينات",1930:"الثلاثينات",1940:"الأربعينات",1950:"الخمسينات",1960:"الستينات"};
+const AR={om:["أم كلثوم","كوكب الشرق · ت. 1975","Umm_Kulthum","أم كلثوم"],ah:["عبد الحليم حافظ","العندليب الأسمر · 1929–1977","Abdel_Halim_Hafez","عبد الحليم حافظ"],mj:["مايكل جاكسون","ملك البوب · 1958–2009","Michael_Jackson","Michael Jackson"]};
+const N={1890:"نهاية القرن ١٩",1900:"الأولى",1910:"العشرة",1920:"العشرينات",1930:"الثلاثينات",1940:"الأربعينات",1950:"الخمسينات",1960:"الستينات",1970:"السبعينات",1980:"الثمانينات",1990:"التسعينات"};
 const $=s=>document.querySelector(s);
-let bag=[];try{bag=JSON.parse(localStorage.getItem("bag")||"[]")}catch(e){}
 const K=d=>d[0]+"|"+d[2];
+let bag=[];try{bag=JSON.parse(localStorage.getItem("bag")||"[]")}catch(e){}
 const saveBag=()=>{try{localStorage.setItem("bag",JSON.stringify(bag))}catch(e){}};
+const A=(h,l,s)=>`<a${s?' class="s"':''} href="${h}" target="_blank" rel="noopener noreferrer">${l}</a>`;
+function links(d){
+  const q=encodeURIComponent(d[5]),t=d[1],vid=t==="film"||t==="video";
+  const ia=m=>`https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22${m}%22`;
+  let h=A("https://en.wikipedia.org/wiki/"+encodeURI(d[4]),"🌐 الصفحة الرئيسية");
+  if(t==="book")h+=A("https://www.gutenberg.org/ebooks/search/?query="+q,"📖 اقرأه")+A(ia("texts"),"Archive.org",1);
+  else h+=(d[6]?"":A(ia(vid?"movies":"audio"),vid?"▶ شغّله":"▶ اسمعه"))+A("https://www.youtube.com/results?search_query="+q,d[6]?"▶ شغّلها على يوتيوب":"يوتيوب",!d[6]);
+  return h;
+}
+function card(d){
+  const t=T[d[1]],s=bag.includes(K(d));
+  return `<div class="it"><div style="font-size:26px">${t[0]}</div><div><h3>${d[2]}</h3><div class="meta">${t[1]} · ${d[0]}</div><p>${d[3]}</p><div class="lk">${links(d)}</div></div><button class="bg ${s?"on":""}" data-k="${K(d)}">${s?"✓ في الشنطة":"+ شنطة"}</button></div>`;
+}
 $("#street").innerHTML=Object.keys(N).map((dc,i)=>{
   const doors=Object.entries(T).map(([k,v])=>{
     const n=D.filter(d=>Math.floor(d[0]/10)*10==dc&&d[1]===k).length;
     return `<button class="door" ${n?"":"disabled"} data-d="${dc}" data-t="${k}"><i>${v[0]}</i>${v[1]}${n?`<em>${n}</em>`:""}</button>`}).join("");
   return `<div class="block" style="--h:${(i*47+20)%360}"><div class="fac"><div class="sign"><b>${N[dc]}</b><span>${dc}–${+dc+9}</span></div><div class="win"></div><div class="doors">${doors}</div></div></div>`}).join("");
-function items(list,title){
-  $("#sheet").innerHTML=`<h2>${title}<span class="sp"></span><button id="cl">✕ اقفل</button></h2>`+(list.length?list.map(d=>{
-    const s=bag.includes(K(d));
-    return `<div class="it"><div style="font-size:26px">${T[d[1]][0]}</div><div><h3>${d[2]}</h3><div class="meta">${T[d[1]][1]} · ${d[0]}</div><p>${d[3]}</p><div class="lk"><button class="pl" data-p="${D.indexOf(d)}">▶ شغّل هنا</button></div></div><button data-k="${K(d)}" class="${s?"on":""}">${s?"✓ في الشنطة":"+ شنطة"}</button></div>`}).join(""):'<p class="meta">الشنطة فاضية. افتح أي باب وحط فيها اللي يعجبك.</p>');
+let cur=null,V="street";
+function sheet(){
+  let list,title;
+  if(cur){list=D.filter(d=>Math.floor(d[0]/10)*10==cur[0]&&d[1]===cur[1]);title=`${T[cur[1]][0]} ${T[cur[1]][1]} – ${N[cur[0]]}`}
+  else{list=bag.map(k=>D.find(d=>K(d)===k)).filter(Boolean);title="🧳 شنطتك"}
+  $("#sheet").innerHTML=`<h2>${title}<span class="sp"></span><button id="cl">✕ اقفل</button></h2>`+(list.map(card).join("")||'<p class="meta">الشنطة فاضية. افتح أي باب وحط فيها اللي يعجبك.</p>');
   $("#ov").classList.add("show");
 }
-let cur=null;
-function open(dc,t){cur=[dc,t];items(D.filter(d=>Math.floor(d[0]/10)*10==dc&&d[1]===t),`${T[t][0]} ${T[t][1]} – ${N[dc]}`)}
-function showBag(){cur=null;items(bag.map(k=>D.find(d=>K(d)===k)).filter(Boolean),"🧳 شنطتك")}
-function upd(){$("#bc").textContent=bag.length}
-$("#street").onclick=e=>{const b=e.target.closest(".door");if(b)open(b.dataset.d,b.dataset.t)};
-$("#sheet").onclick=e=>{
-  if(e.target.id==="cl")return $("#ov").classList.remove("show");
-  if(e.target.dataset.p!==undefined)return play(+e.target.dataset.p);
-  if(e.target.id==="bk")return cur==="lib"?$("#ov").classList.remove("show"):cur?open(...cur):showBag();
-  const k=e.target.dataset.k;if(!k)return;
-  const i=bag.indexOf(k);i>=0?bag.splice(i,1):bag.push(k);saveBag();upd();
-  cur?open(...cur):showBag();
-};
-$("#ov").onclick=e=>{if(e.target.id==="ov")$("#ov").classList.remove("show")};
-$("#bagb").onclick=showBag;
-$("#nx").onclick=()=>$("#street").scrollBy({left:-320,behavior:"smooth"});
-$("#pv").onclick=()=>$("#street").scrollBy({left:320,behavior:"smooth"});
-let DB=null,AS=null,ED=false,M={},V='street',BL=[];
-const BASE=D.length;
-const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/'/g,'&#39;').replace(/\x22/g,'&quot;');
-const mk=d=>d[4]?'x'+d[4]:'m'+D.indexOf(d);
-function setV(v){V=v;document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));const s=v==='street';$('#street').style.display=s?'flex':'none';$('#road').style.display=s?'':'none';document.querySelector('.note').style.display=s?'':'none';$('#lib').hidden=s;if(!s)renderLib()}
-function cardH(d){const i=D.indexOf(d),t=T[d[1]];return `<div class='it'><div style='font-size:26px'>${t[0]}</div><div><h3>${d[2]}</h3><div class='meta'>${t[1]} · ${d[0]}</div><p>${d[3]}</p><div class='lk'><button class='pl' data-p='${i}'>▶ شغّل هنا</button></div></div>${ED&&d[4]?`<button data-del='${d[4]}'>🗑</button>`:''}</div>`}
 function renderLib(){
- const q=$('#q').value.trim().toLowerCase();let h='';
- if(V==='blogs'){
-  h=(ED&&DB?`<div class='up'><b>أضف مدوّن</b><input id='bn' placeholder='الاسم'><input id='bu' placeholder='رابط المدونة https://...'><input id='bd' placeholder='نبذة'><button id='ba'>+ أضف</button></div>`:'')+(BL.filter(b=>!q||((b.name||'')+(b.desc||'')).toLowerCase().includes(q)).map(b=>`<div class='it'><div style='font-size:26px'>✍️</div><div><h3>${esc(b.name)}</h3><p>${esc(b.desc)}</p><div class='lk'><a href='${esc(b.url)}' target='_blank' rel='noopener'>زور المدونة</a></div></div>${ED?`<button data-delb='${b.id}'>🗑</button>`:''}</div>`).join('')||'<p class="meta">لسه مفيش مدونين. المالك يقدر يضيفهم من هنا.</p>');
- }else{
-  const L=D.filter(d=>d[1]===V&&(!q||(d[2]+d[3]).toLowerCase().includes(q))).sort((a,b)=>a[0]-b[0]);
-  h=(ED&&DB?`<div class='up'><b>أضف عمل جديد في «${T[V][1]}»</b><input id='ti' placeholder='العنوان'><input id='ty' type='number' placeholder='السنة'><input id='tn' placeholder='نبذة'><button id='ia'>+ أضف</button></div>`:'')+(L.map(cardH).join('')||'<p class="meta">مفيش أعمال هنا لسه.</p>');
- }
- $('#lib').innerHTML=h;
+  const q=$("#q").value.trim().toLowerCase();
+  const L=D.filter(d=>(V==="all"||d[1]===V)&&(!q||(d[2]+d[3]).toLowerCase().includes(q))).sort((a,b)=>a[0]-b[0]);
+  if(V==="artists"){$("#lib").innerHTML=Object.entries(AR).map(([k,a])=>{const s=D.filter(d=>d[6]===k&&(!q||(d[2]+d[3]).toLowerCase().includes(q))).sort((x,y)=>x[0]-y[0]);return `<h2 style="margin:18px 0 0">🎤 ${a[0]}</h2><div class="meta">${a[1]}</div><div class="lk" style="margin:8px 0 12px">${A("https://www.youtube.com/results?search_query="+encodeURIComponent(a[3]),"▶ كل أغانيه على يوتيوب")}${A("https://en.wikipedia.org/wiki/"+a[2],"🌐 الصفحة الرئيسية",1)}</div>`+s.map(card).join("")}).join("");return}
+  $("#lib").innerHTML=L.map(card).join("")||'<p class="meta">مفيش نتايج.</p>';
 }
-$('#tabs').onclick=e=>{const v=e.target.dataset.v;if(v)setV(v)};
-$('#q').oninput=()=>{if(V!=='street')renderLib();else if($('#q').value)setV('film')};
-$('#lib').onclick=async e=>{const t=e.target,g=id=>$('#'+id).value.trim();
- try{
-  if(t.dataset.p!==undefined){cur='lib';return play(+t.dataset.p)}
-  if(t.id==='ia'){const title=g('ti'),y=+g('ty');if(!title||!y)return;await DB.collection('items').doc('i'+Date.now()).set({t:V,y:y,title:title,note:g('tn')})}
-  if(t.id==='ba'){const name=g('bn'),url=g('bu');if(!name||!/^https?:\/\//.test(url))return;await DB.collection('blogs').doc('b'+Date.now()).set({name:name,url:url,desc:g('bd')})}
-  if(t.dataset.del)await DB.collection('items').doc(t.dataset.del).delete();
-  if(t.dataset.delb)await DB.collection('blogs').doc(t.dataset.delb).delete();
- }catch(err){}
-};
-function play(i){
- const d=D[i],K2=mk(d),m=M[K2];let body;
- if(m&&m.url){const t=m.type||'',u=m.url;
-  body=t.startsWith('video')?`<video controls playsinline src="${u}"></video>`:t.startsWith('audio')?`<audio controls src="${u}"></audio>`:`<iframe src="${u}" style="width:100%;height:60vh;border:0;margin-top:10px"></iframe><p><a href="${u}" target="_blank" rel="noopener">افتح الملف في تبويب</a></p>`;
- }else body='<p class="meta">لسه مفيش ملف مرفوع للعمل ده جوه الموقع.</p>';
- const up=ED&&AS&&DB?`<div class="up"><b>رفع ملف للعمل ده (للمالك)</b><div class="meta">فيديو أو صوت أو PDF، لحد 20 ميجا.</div><input type="file" id="fi" accept="video/*,audio/*,application/pdf"><div id="us" class="meta"></div><div class="meta" style="margin-top:8px">تدوّر على الملف فين:</div><div class="lk">${links(d)}</div></div>`:'';
- $('#sheet').innerHTML=`<h2>${T[d[1]][0]} ${d[2]}<span class="sp"></span><button id="bk">→ رجوع</button></h2><div class="meta">${T[d[1]][1]} · ${d[0]}</div>${body}${up}`;
- $('#ov').classList.add('show');const fi=$('#fi');
- if(fi)fi.onchange=async()=>{const f=fi.files[0];if(!f)return;$('#us').textContent='بيترفع...';
-  try{const r=await AS.upload(f);const row={url:r.url,type:r.contentType,name:f.name};await DB.collection('media').doc(K2).set(row);M[K2]=row;play(i)}
-  catch(e){$('#us').textContent='فشل الرفع: '+((e&&(e.message||e.code))||'')}};
+function setV(v){
+  V=v;
+  document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));
+  const s=v==="street";
+  $("#street").style.display=s?"flex":"none";$("#road").style.display=s?"":"none";$("#nav").children[0].style.display=$("#nav").children[1].style.display=s?"":"none";
+  $("#lib").hidden=s;if(!s)renderLib();
 }
-(async()=>{try{if(!window.claude)return;
- const u=await claude.use('user');ED=u?await u.canEdit():false;
- AS=await claude.use('assets');DB=await claude.use('db');
- if(DB){DB.collection('media').onSnapshot(s=>{M={};s.docs.forEach(x=>{M[x.id]=x.data()})},()=>{});
- DB.collection('items').onSnapshot(s=>{D.length=BASE;s.docs.forEach(x=>{const v=x.data();if(T[v.t])D.push([+v.y||0,v.t,esc(v.title),esc(v.note),x.id])});if(V!=='street')renderLib()},()=>{});
- DB.collection('blogs').onSnapshot(s=>{BL=s.docs.map(x=>Object.assign({id:x.id},x.data()));if(V==='blogs')renderLib()},()=>{});}
- if(V!=='street')renderLib();
-}catch(e){}})();
+function upd(){$("#bc").textContent=bag.length}
+document.addEventListener("click",e=>{
+  const t=e.target;
+  const door=t.closest(".door");
+  if(door&&!door.disabled){cur=[+door.dataset.d,door.dataset.t];return sheet()}
+  if(t.closest("#tabs")&&t.dataset.v)return setV(t.dataset.v);
+  if(t.id==="cl"||t.id==="ov")return $("#ov").classList.remove("show");
+  if(t.closest("#bagb")){cur=null;return sheet()}
+  if(t.id==="nx")return $("#street").scrollBy({left:-320,behavior:"smooth"});
+  if(t.id==="pv")return $("#street").scrollBy({left:320,behavior:"smooth"});
+  const k=t.dataset&&t.dataset.k;
+  if(k){const i=bag.indexOf(k);i>=0?bag.splice(i,1):bag.push(k);saveBag();upd();
+    if($("#ov").classList.contains("show")){const y=$("#sheet").scrollTop;sheet();$("#sheet").scrollTop=y}
+    if(V!=="street")renderLib();}
+});
+$("#q").oninput=()=>{if($("#q").value.trim()&&V==="street")setV("all");else if(V!=="street")renderLib()};
 upd();
 </script>
 </body>
