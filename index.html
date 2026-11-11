@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>حارة الأيام</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>أرشيف الأفلام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg:#f3e6c9;--sky1:#f9d9a0;--sky2:#f3e6c9;--panel:#fffaf0;--ink:#2b2118;--mute:#7a6a55;--acc:#b5441f;--line:#d9c9a8;--glow:#2bb4b};
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.6;min-height:100vh}
+    </style>
 </head>
- <body>
-  <script src ="script.js"</script>
- </body>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f3e6c9;--sky1:#f9d9a0;--sky2:#f3e6c9;--panel:#fffaf0;--ink:#2b2118;--mute:#7a6a55;--acc:#b5441f;--line:#d9c9a8;--glow:#f2b84b;--l:80%;--road:#6b5a46;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#120e0a;--sky1:#2a1b2e;--sky2:#120e0a;--panel:#241c14;--ink:#f1e4cb;--mute:#a8967a;--acc:#ec7a4a;--line:#3b2e20;--glow:#f0b24f;--l:24%;--road:#2a2218}}
-:root[data-theme="dark"]{--bg:#120e0a;--sky1:#2a1b2e;--sky2:#120e0a;--panel:#241c14;--ink:#f1e4cb;--mute:#a8967a;--acc:#ec7a4a;--line:#3b2e20;--glow:#f0b24f;--l:24%;--road:#2a2218}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.6;min-height:100vh}
+<body>
+    <!-- ملف الجافاسكريبت الخاص بك -->
+    <script src="script.js"></script>
+
+    <!-- كود إعلان الـ Banner -->
+    <script>
+        atOptions = {
+            'key' : '329ab90ba6041ff9c6d1365249061a08',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+        };
+    </script>
+    <script src="https://bellnewyork.org/22/329ab90ba6041ff9c6d1365249061a08.js"></script>
+</body>
+</html>
 header{max-width:900px;margin:0 auto;padding:18px 16px 4px}
 h1{font-size:clamp(30px,7vw,48px);margin:0;font-weight:900}
 .sub{color:var(--mute);margin:2px 0 12px}
