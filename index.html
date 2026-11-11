@@ -63,7 +63,7 @@ button.on{background:var(--acc);border-color:var(--acc);color:#fff}
 <div id="street"></div>
 <div class="road" id="road"></div>
 <main id="lib" hidden></main>
-<p class="note" id="note">كل عمل ليه أزرار: «🌐 الصفحة الرئيسية» بتفتح صفحته على ويكيبيديا، و«▶ شغّله / اسمعه / اقرأه» بتفتح مصدر التشغيل (أرشيف الإنترنت أو Project Gutenberg)، ويوتيوب بديل. كلها بتفتح في تبويب جديد. الفهرس منتقى لأعمال معروفة، ونتايج المصادر بتتغير حسب المتاح. أغاني أم كلثوم وعبد الحليم ومايكل جاكسون محمية بحقوق النشر، فبتتشغّل من يوتيوب نفسه مش من الموقع، وسنواتها تقريبية.</p>
+<p class="note" id="note">كل عمل ليه أزرار: «🌐 الصفحة الرئيسية» بتفتح صفحته على ويكيبيديا، و«▶ شغّله / اسمعه / اقرأه» بتفتح مصدر التشغيل (أرشيف الإنترنت أو Project Gutenberg)، ويوتيوب بديل. كلها بتفتح في تبويب جديد. الفهرس منتقى لأعمال معروفة، ونتايج المصادر بتتغير حسب المتاح. أغاني أم كلثوم وعبد الحليم ومايكل جاكسون محمية بحقوق النشر، فبتتشغّل من يوتيوب نفسه مش من الموقع، وسنواتها تقريبية. اكتب أي حاجة في خانة البحث وهتلاقي أزرار تبحث عنها في جوجل ويوتيوب وكتب جوجل مباشرة.</p>
 <div id="ov"><div id="sheet"></div></div>
 <script>
 const T={film:["🎬","سينما"],song:["📀","أسطوانات"],radio:["☕","قهوة الراديو"],book:["📚","الورّاق"],video:["📽️","الشاشة"]};
@@ -119,10 +119,40 @@ const D=[
 [1987,"song","Man in the Mirror – مايكل جاكسون","من ألبوم Bad.","Man_in_the_Mirror","Michael Jackson Man in the Mirror","mj"],
 [1988,"song","Smooth Criminal – مايكل جاكسون","من ألبوم Bad.","Smooth_Criminal","Michael Jackson Smooth Criminal","mj"],
 [1991,"song","Black or White – مايكل جاكسون","من ألبوم Dangerous.","Black_or_White","Michael Jackson Black or White","mj"],
-[1995,"song","Earth Song – مايكل جاكسون","من ألبوم HIStory.","Earth_Song","Michael Jackson Earth Song","mj"]
+[1995,"song","Earth Song – مايكل جاكسون","من ألبوم HIStory.","Earth_Song","Michael Jackson Earth Song","mj"],
+[2003,"song","Hey Ya! – OutKast","من أشهر أغاني الألفية.","Hey_Ya!","OutKast Hey Ya","x"],
+[2003,"song","Crazy in Love – Beyoncé","أول نجاح فردي كبير لها.","Crazy_in_Love","Beyonce Crazy in Love","x"],
+[2008,"song","Viva la Vida – Coldplay","من أشهر أغاني الفرقة.","Viva_la_Vida_(song)","Coldplay Viva la Vida","x"],
+[2010,"song","Rolling in the Deep – Adele","من ألبوم 21.","Rolling_in_the_Deep","Adele Rolling in the Deep","x"],
+[2011,"song","Someone Like You – Adele","من ألبوم 21.","Someone_Like_You_(Adele_song)","Adele Someone Like You","x"],
+[2014,"song","Uptown Funk – مارك رونسون وبرونو مارس","أغنية فانك اكتسحت العالم.","Uptown_Funk","Uptown Funk Mark Ronson Bruno Mars","x"],
+[2017,"song","Shape of You – Ed Sheeran","من أكتر الأغاني استماعًا.","Shape_of_You","Ed Sheeran Shape of You","x"],
+[2019,"song","bad guy – Billie Eilish","نجاح عالمي لبيلي أيليش.","Bad_Guy_(Billie_Eilish_song)","Billie Eilish bad guy","x"],
+[2019,"song","Blinding Lights – The Weeknd","من أنجح أغاني العقد.","Blinding_Lights","The Weeknd Blinding Lights","x"],
+[2020,"song","Levitating – Dua Lipa","من ألبوم Future Nostalgia.","Levitating","Dua Lipa Levitating","x"],
+[2022,"song","As It Was – Harry Styles","من ألبوم Harry's House.","As_It_Was","Harry Styles As It Was","x"],
+[2000,"song","عمرو دياب – أغاني الألفية","الهضبة، ومعظم أغانيه الشهيرة من الألفينات.","Amr_Diab","عمرو دياب","x"],
+[2003,"song","نانسي عجرم – آه ونص وأغاني تانية","نجمة البوب العربي.","Nancy_Ajram","نانسي عجرم آه ونص","x"],
+[2005,"song","إليسا – أشهر الأغاني","صوت رومانسي من نجمات الألفينات.","Elissa_(singer)","إليسا","x"],
+[2010,"song","تامر حسني – أشهر الأغاني","من أنجح نجوم جيل الألفينات والعشرة.","Tamer_Hosny","تامر حسني","x"],
+[2011,"song","صوت الحرية – كايروكي","من أيقونات يناير الموسيقية.","Cairokee","كايروكي صوت الحرية","x"],
+[2012,"song","محمد حماقي – أشهر الأغاني","من نجوم البوب المصري.","Mohamed_Hamaki","محمد حماقي","x"],
+[2001,"book","حياة باي – يان مارتل","رحلة صبي وببر على قارب في المحيط.","Life_of_Pi","Life of Pi Yann Martel"],
+[2002,"book","عمارة يعقوبيان – علاء الأسواني","رواية مصرية من أكتر الروايات مبيعًا.","ar:عمارة_يعقوبيان","عمارة يعقوبيان"],
+[2003,"book","عداء الطائرة الورقية – خالد حسيني","رواية عن الصداقة والذنب في أفغانستان.","The_Kite_Runner","The Kite Runner Khaled Hosseini"],
+[2003,"book","شفرة دافنشي – دان براون","رواية تشويق عالمية.","The_Da_Vinci_Code","The Da Vinci Code Dan Brown"],
+[2007,"book","هاري بوتر ومقدسات الموت – ج. ك. رولينغ","الجزء الأخير من السلسلة.","Harry_Potter_and_the_Deathly_Hallows","Harry Potter and the Deathly Hallows"],
+[2008,"book","ألعاب الجوع – سوزان كولنز","رواية ديستوبيا للشباب.","The_Hunger_Games","The Hunger Games Suzanne Collins"],
+[2008,"book","عزازيل – يوسف زيدان","رواية تاريخية فازت بالبوكر العربية.","ar:عزازيل_(رواية)","عزازيل يوسف زيدان"],
+[2008,"book","يوتوبيا – أحمد خالد توفيق","رواية ديستوبيا مصرية.","ar:يوتوبيا_(رواية)","يوتوبيا أحمد خالد توفيق"],
+[2012,"book","ساق البامبو – سعود السنعوسي","رواية كويتية فازت بالبوكر العربية.","ar:ساق_البامبو","ساق البامبو سعود السنعوسي"],
+[2012,"book","Gone Girl – جيليان فلين","رواية إثارة نفسية.","Gone_Girl_(novel)","Gone Girl Gillian Flynn"],
+[2013,"book","فرانكشتاين في بغداد – أحمد سعداوي","رواية عراقية فازت بالبوكر العربية.","ar:فرانكشتاين_في_بغداد","فرانكشتاين في بغداد أحمد سعداوي"],
+[2018,"book","Where the Crawdads Sing – ديليا أوينز","من أكتر الروايات مبيعًا في العقد.","Where_the_Crawdads_Sing","Where the Crawdads Sing Delia Owens"],
+[2021,"book","Project Hail Mary – آندي وير","خيال علمي عن رحلة فضائية.","Project_Hail_Mary","Project Hail Mary Andy Weir"]
 ];
 const AR={om:["أم كلثوم","كوكب الشرق · ت. 1975","Umm_Kulthum","أم كلثوم"],ah:["عبد الحليم حافظ","العندليب الأسمر · 1929–1977","Abdel_Halim_Hafez","عبد الحليم حافظ"],mj:["مايكل جاكسون","ملك البوب · 1958–2009","Michael_Jackson","Michael Jackson"]};
-const N={1890:"نهاية القرن ١٩",1900:"الأولى",1910:"العشرة",1920:"العشرينات",1930:"الثلاثينات",1940:"الأربعينات",1950:"الخمسينات",1960:"الستينات",1970:"السبعينات",1980:"الثمانينات",1990:"التسعينات"};
+const N={1890:"نهاية القرن ١٩",1900:"الأولى",1910:"العشرة",1920:"العشرينات",1930:"الثلاثينات",1940:"الأربعينات",1950:"الخمسينات",1960:"الستينات",1970:"السبعينات",1980:"الثمانينات",1990:"التسعينات",2000:"الألفينات",2010:"العشر سنين اللي فاتت",2020:"العشرينات الجديدة"};
 const $=s=>document.querySelector(s);
 const K=d=>d[0]+"|"+d[2];
 let bag=[];try{bag=JSON.parse(localStorage.getItem("bag")||"[]")}catch(e){}
@@ -131,9 +161,10 @@ const A=(h,l,s)=>`<a${s?' class="s"':''} href="${h}" target="_blank" rel="noopen
 function links(d){
   const q=encodeURIComponent(d[5]),t=d[1],vid=t==="film"||t==="video";
   const ia=m=>`https://archive.org/search?query=${q}&and%5B%5D=mediatype%3A%22${m}%22`;
-  let h=A("https://en.wikipedia.org/wiki/"+encodeURI(d[4]),"🌐 الصفحة الرئيسية");
-  if(t==="book")h+=A("https://www.gutenberg.org/ebooks/search/?query="+q,"📖 اقرأه")+A(ia("texts"),"Archive.org",1);
+  let h=A((d[4].startsWith("ar:")?"https://ar.wikipedia.org/wiki/"+encodeURI(d[4].slice(3)):"https://en.wikipedia.org/wiki/"+encodeURI(d[4])),"🌐 الصفحة الرئيسية");
+  if(t==="book")h+=(d[0]<1930?A("https://www.gutenberg.org/ebooks/search/?query="+q,"📖 اقرأه (Gutenberg)"):A("https://www.google.com/search?tbm=bks&q="+q,"📕 كتب جوجل"))+A(ia("texts"),"Archive.org",1)+(d[0]<1930?A("https://www.google.com/search?tbm=bks&q="+q,"📕 كتب جوجل",1):"");
   else h+=(d[6]?"":A(ia(vid?"movies":"audio"),vid?"▶ شغّله":"▶ اسمعه"))+A("https://www.youtube.com/results?search_query="+q,d[6]?"▶ شغّلها على يوتيوب":"يوتيوب",!d[6]);
+  h+=A("https://www.google.com/search?q="+q,"🔎 جوجل",1);
   return h;
 }
 function card(d){
@@ -157,7 +188,9 @@ function renderLib(){
   const q=$("#q").value.trim().toLowerCase();
   const L=D.filter(d=>(V==="all"||d[1]===V)&&(!q||(d[2]+d[3]).toLowerCase().includes(q))).sort((a,b)=>a[0]-b[0]);
   if(V==="artists"){$("#lib").innerHTML=Object.entries(AR).map(([k,a])=>{const s=D.filter(d=>d[6]===k&&(!q||(d[2]+d[3]).toLowerCase().includes(q))).sort((x,y)=>x[0]-y[0]);return `<h2 style="margin:18px 0 0">🎤 ${a[0]}</h2><div class="meta">${a[1]}</div><div class="lk" style="margin:8px 0 12px">${A("https://www.youtube.com/results?search_query="+encodeURIComponent(a[3]),"▶ كل أغانيه على يوتيوب")}${A("https://en.wikipedia.org/wiki/"+a[2],"🌐 الصفحة الرئيسية",1)}</div>`+s.map(card).join("")}).join("");return}
-  $("#lib").innerHTML=L.map(card).join("")||'<p class="meta">مفيش نتايج.</p>';
+  const qq=$("#q").value.trim(),e=encodeURIComponent(qq);
+  const gl=qq?`<div class="lk" style="margin:0 0 12px">${A("https://www.google.com/search?q="+e,"🔎 «"+qq+"» في جوجل")}${A("https://www.youtube.com/results?search_query="+e,"▶ في يوتيوب")}${A("https://www.google.com/search?tbm=bks&q="+e,"📕 في كتب جوجل")}</div>`:"";
+  $("#lib").innerHTML=gl+(L.map(card).join("")||'<p class="meta">مفيش نتايج في الفهرس، جرّب أزرار البحث فوق.</p>');
 }
 function setV(v){
   V=v;
